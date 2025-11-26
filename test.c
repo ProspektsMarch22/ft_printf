@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:39:22 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/11/26 20:21:33 by icezar-s         ###   ########.fr       */
+/*   Created: 2025/11/26 20:11:16 by icezar-s          #+#    #+#             */
+/*   Updated: 2025/11/26 20:47:02 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int	ft_putcharc(char c);
-int	ft_putstrc(char *str);
-int	ft_putnbrc(int nbr);
-int	ft_putunbrc(unsigned int nbr);
-int	ft_puthexc(char cc, int dec);
-int	ft_putaddressc(void *add);
-int	ft_printf(const char *fmt, ...);
-#endif
+int	main()
+{
+	ft_printf("Im a %d student.", 42);
+	return (0);
+}

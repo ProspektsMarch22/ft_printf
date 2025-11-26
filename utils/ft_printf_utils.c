@@ -6,15 +6,16 @@
 /*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:11:53 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/11/25 16:31:28 by icezar-s         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:22:21 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
 #include "../ft_printf.h"
 
 int	ft_putcharc(char c)
 {
-	ft_putchar_fd(1, c);
+	ft_putchar_fd(c, 1);
 	return (1);
 }
 

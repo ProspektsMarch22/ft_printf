@@ -6,35 +6,36 @@
 /*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:51:40 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/11/25 19:52:06 by icezar-s         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:48:25 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft/libft.h"
 #include "ft_printf.h"
 
-static int	ft_printf_juggler(char conversor, va_list ap)
+static void	ft_printf_juggler(char conversor, va_list ap, int count)
 {
 	if (conversor == 'c')
-		return (ft_putcharc(va_arg(ap, char)));
+		count += ft_putcharc(va_arg(ap, int));
 	else if (conversor == 'd' || conversor == 'i')
-		return (ft_putnbrc(va_arg(ap, int)));
+		count += ft_putnbrc(va_arg(ap, int));
 	else if (conversor == 's')
-		return (ft_putstrc(va_arg(ap, char *)));
+		count += ft_putstrc(va_arg(ap, char *));
 	else if (conversor == 'p')
-		return (ft_putaddressc(va_arg(ap, void *)));
+		count += ft_putaddressc(va_arg(ap, void *));
 	else if (conversor == 'u')
-		return (ft_putunbrc(va_arg(ap, unsigned int)));
+		count += ft_putunbrc(va_arg(ap, unsigned int));
 	else if (conversor == 'x' || conversor == 'X')
-		return (ft_puthexc(conversor, va_arg(ap, int)));
+		count += ft_puthexc(conversor, va_arg(ap, int));
 	else if (conversor == '%')
-		return (ft_putcharc('%'));
+		count += ft_putcharc('%');
 }
 
 int	ft_printf(const char *fmt, ...)
 {
-	va_list		ap;
-	int			count;
-	char		*p;
+	va_list					ap;
+	int						count;
+	const char				*p;
 
 	va_start(ap, fmt);
 	p = fmt;
@@ -44,10 +45,10 @@ int	ft_printf(const char *fmt, ...)
 		if (*p != '%')
 		{
 			count += ft_putcharc(*p);
-			continue ;
 		}
 		else if (*p == '%')
-			count += ft_printf_juggler(++*p, ap);
+			ft_printf_juggler(*(++p), ap, count);
+		p++;
 	}
 	va_end(ap);
 	return (count);
