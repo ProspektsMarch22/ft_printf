@@ -25,6 +25,7 @@ int		ft_puthexc(char cc, unsigned int nbr);
 int		ft_putaddressc(void *add);
 int		ft_printf(const char *fmt, ...);
 char	*ft_itoa(int n);
+char  *ft_itoua(unsigned int n);
 void	ft_putchar_fd(char c, int fd);
 size_t	ft_strlen(const char *s);
 #endif
