@@ -47,11 +47,11 @@ int	ft_puthexc(char cc, unsigned int nbr)
 int	ft_putaddressc(void *add)
 {
 	int						count;
-	unsigned long			mem;
 
 	count = 0;
-	mem = (unsigned long)(add);
+  if (add == NULL)
+    return (ft_putstrc("(nil)"));
 	count += ft_putstrc("0x");
-	ft_recursive_putaddressc(mem, &count, "0123456789abcdef");
+	ft_recursive_putaddressc((unsigned long)add, &count, "0123456789abcdef");
 	return (count);
 }
