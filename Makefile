@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pedantic -g
@@ -46,4 +46,7 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 
-re: clean all
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
