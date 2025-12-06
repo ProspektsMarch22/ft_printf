@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
+/*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 20:11:16 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/11/26 20:47:02 by icezar-s         ###   ########.fr       */
+/*   Created: 2025/12/06 12:52:28 by icezar-s          #+#    #+#             */
+/*   Updated: 2025/12/06 12:53:12 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+int main()
 {
-	ft_printf("Im a %d student.", 42);
-	return (0);
+  ft_printf("Olá, eu sou um estudante da %d\n.", 42);
+  return (0);
 }

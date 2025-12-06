@@ -3,52 +3,47 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+         #
+#    By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/26 13:47:49 by icezar-s          #+#    #+#              #
-#    Updated: 2025/11/26 20:32:22 by icezar-s         ###   ########.fr        #
+#    Created: 2025/12/06 12:45:50 by icezar-s          #+#    #+#              #
+#    Updated: 2025/12/06 12:50:43 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_printf.a
 
-CC=cc
-CFLAGS=-Wall -Wextra -Werror -pedantic -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -pedantic -g
 
-AR=ar rcs
-RM=rm -rf
+AR = ar rcs
+RM = rm -rf
 
-UTILS=ft_printf_utils.c ft_printf_utils_hex.c
-SRCS=ft_printf.c
+LIBFT_DIR = ./libft
+LIBFT_A = $(LIBFT_DIR)/libft.a
+LIBFT_INC = $(LIBFT_DIR)
 
-LIBFT=./libft/libft.a
+UTILS = ft_printf_utils.c ft_printf_utils_hex.c
+SRC = ft_printf.c
 
-UTIL=$(addprefix ./utils/,$(UTILS))
-SRC=$(addprefix ./,$(SRCS))
+UTIL = $(addprefix ./utils/,$(UTILS))
+SRCS = $(addprefix ./,$(SRCS))
 
-OBJ_UTIL=$(UTIL:.c=.o)
-OBJ=$(SRC:.c=.o)
+OBJ_UTIL = $(UTIL:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-.PHONY: all clean fclean re
+OBJS = $(OBJ) $(OBJ_UTIL)
+
+.PHONY = all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJ_UTIL) $(LIBFT)
-	$(AR) $(NAME) $(OBJ) $(OBJ_UTIL)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-$(OBJ): %.o: %.c
-	$(CC) $(CFLAGS) -I . -c $< -o $@
-
-$(OBJ_UTIL): %.o: %.c
-	$(CC) $(CFLAGS) -I ../libft/ -c $< -o $@
-
-$(LIBFT):
-	$(MAKE) -C libft 
+%.o: %.c
+	$(CC) $(CFLAGS) -I . -I $(LIBFT_INC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) $(OBJ_UTIL)
+	$(RM) $(OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
-
-re: fclean all
+re: clean all
