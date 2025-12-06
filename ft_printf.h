@@ -21,7 +21,7 @@ int		ft_putcharc(char c);
 int		ft_putstrc(char *str);
 int		ft_putnbrc(int nbr);
 int		ft_putunbrc(unsigned int nbr);
-int		ft_puthexc(char cc, int dec);
+int		ft_puthexc(char cc, unsigned int nbr);
 int		ft_putaddressc(void *add);
 int		ft_printf(const char *fmt, ...);
 char	*ft_itoa(int n);

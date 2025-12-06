@@ -25,7 +25,7 @@ static void	ft_printf_juggler(char conversor, va_list ap, int *count)
 	else if (conversor == 'u')
 		*count += ft_putunbrc(va_arg(ap, unsigned int));
 	else if (conversor == 'x' || conversor == 'X')
-		*count += ft_puthexc(conversor, va_arg(ap, int));
+		*count += ft_puthexc(conversor, va_arg(ap, unsigned int));
 	else if (conversor == '%')
 		*count += ft_putcharc('%');
 }
