@@ -1,47 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 16:11:53 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/11/26 20:22:21 by icezar-s         ###   ########.fr       */
+/*   Created: 2025/10/10 16:36:23 by icezar-s          #+#    #+#             */
+/*   Updated: 2025/10/21 00:58:15 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putcharc(char c)
+size_t	ft_strlen(const char *s)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
-}
+	size_t	i;
 
-int	ft_putstrc(char *str)
-{
-	write(1, str, ft_strlen(str));
-	return ((int)ft_strlen(str));
-}
-
-int	ft_putnbrc(int nbr)
-{
-	char	*num;
-	int		len;
-
-	num = ft_itoa(nbr);
-	len = (int)ft_putstrc(num);
-	free(num);
-	return (len);
-}
-
-int	ft_putunbrc(unsigned int nbr)
-{
-	char	*num;
-	int		len;
-
-	num = ft_itoa(nbr);
-	len = (int)ft_putstrc(num);
-	free(num);
-	return (len);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

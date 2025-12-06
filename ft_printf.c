@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
 #include "ft_printf.h"
 
 static void	ft_printf_juggler(char conversor, va_list ap, int count)

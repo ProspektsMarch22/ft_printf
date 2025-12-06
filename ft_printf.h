@@ -12,13 +12,19 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
 # include <stdarg.h>
 
-int	ft_putcharc(char c);
-int	ft_putstrc(char *str);
-int	ft_putnbrc(int nbr);
-int	ft_putunbrc(unsigned int nbr);
-int	ft_puthexc(char cc, int dec);
-int	ft_putaddressc(void *add);
-int	ft_printf(const char *fmt, ...);
+int	    ft_putcharc(char c);
+int	    ft_putstrc(char *str);
+int	    ft_putnbrc(int nbr);
+int	    ft_putunbrc(unsigned int nbr);
+int	    ft_puthexc(char cc, int dec);
+int	    ft_putaddressc(void *add);
+int	    ft_printf(const char *fmt, ...);
+char    *ft_itoa(int n);
+void    ft_putchar_fd(char c, int fd);
+size_t  ft_strlen(const char *s);
 #endif

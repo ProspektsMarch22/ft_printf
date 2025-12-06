@@ -18,11 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -pedantic -g
 AR = ar rcs
 RM = rm -rf
 
-LIBFT_DIR = ./libft
-LIBFT_A = $(LIBFT_DIR)/libft.a
-LIBFT_INC = $(LIBFT_DIR)
-
-UTILS = ft_printf_utils.c ft_printf_utils_hex.c
+UTILS = ft_printf_utils.c ft_printf_utils_hex.c ft_putchar_fd.c ft_itoa.c ft_strlen.c
 SRC = ft_printf.c
 
 UTIL = $(addprefix ./utils/,$(UTILS))
@@ -41,7 +37,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I . -I $(LIBFT_INC) -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

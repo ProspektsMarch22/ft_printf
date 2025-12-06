@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../ft_printf.h"
 
 static void	ft_recursive_puthexc(long int lnbr, int *count, char *base)
