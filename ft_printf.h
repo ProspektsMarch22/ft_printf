@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:39:22 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/12/06 13:39:34 by icezar-s         ###   ########.fr       */
+/*   Updated: 2025/12/06 19:29:22 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_puthexc(char cc, unsigned int nbr);
 int		ft_putaddressc(void *add);
 int		ft_printf(const char *fmt, ...);
 char	*ft_itoa(int n);
-char  *ft_itoua(unsigned int n);
+char	*ft_itoua(unsigned int n);
 void	ft_putchar_fd(char c, int fd);
 size_t	ft_strlen(const char *s);
 #endif
