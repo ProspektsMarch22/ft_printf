@@ -6,7 +6,7 @@
 /*   By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 16:53:21 by icezar-s          #+#    #+#             */
-/*   Updated: 2025/12/06 19:36:20 by icezar-s         ###   ########.fr       */
+/*   Updated: 2025/12/06 19:52:12 by icezar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static size_t	ft_digits(unsigned long int n)
 	return (1);
 }
 
-static void	ft_recusive_itoua(char *ptr, long unsigned int n)
+static void	ft_recursive_itoua(char *ptr, long unsigned int n)
 {
 	if (n > 9)
-		ft_recusive_itoua((ptr - 1), (n / 10));
+		ft_recursive_itoua((ptr - 1), (n / 10));
 	*ptr = (char)((n % 10) + '0');
 }
 
